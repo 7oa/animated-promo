@@ -1,0 +1,56 @@
+extends core/_template
+
+block title
+	title YEEZY
+
+block content
+	.wrapper
+		.bg
+			._left.animate-bg
+				img._left-img.animate-bg-img(src='img/HB_ADS1102.jpg' alt='')
+			._right
+		.container
+			.left-part.animate-slide
+				._img-wrapper
+					._img-container.animate-slide-img
+						img._img(src='img/Kanye-West-The-Meadows-Sept-2016-billboard-1548.jpg' alt='')
+				._content
+					._header
+						.logo // Logo
+						._header-rigth
+							a.share-link(href='#') Share +
+							button.grid-view
+					._container
+						.text
+							.title
+								._line
+									span.animate-title Adidas YEEZY new
+								._line
+									span.animate-title Season 6 collection by
+								._line
+									span.animate-title
+										strong Kanye West
+							a.link-to-store.animate-to-store(href='#')
+								| Find to store 
+								span.link-arr &rarr;
+					._footer
+						.new-collection-link
+							span._span see our
+							a._link(href='#')
+								| new collection 
+								span.link-arr &rarr;
+			.right-part
+				.icon-panel
+					button.like.animate-like
+					.linked-by.animate-linked-by
+						| Liked by
+					button.user-pic.animate-user-pic
+						img(src='img/portrait.jpeg' alt='')
+					button.user-pic.animate-user-pic
+						img(src='img/portrait2.jpg' alt='')
+					button.user-pic.animate-user-pic
+						img(src='img/portrait3.jpg' alt='')
+				button.open-button
+					span
+					span
+					span

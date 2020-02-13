@@ -1,0 +1,275 @@
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.wrapper {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: darkcyan;
+  overflow: hidden;
+}
+
+.bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  &__left {
+    width: 100%;
+    overflow: hidden;
+    img {
+      height: 100vh;
+      width: 100vw;
+      object-fit: cover;
+    }
+  }
+  &__right {
+    flex-grow: 1;
+    background-image: url("../img/adidas-yeezy-boost.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+}
+.container {
+  width: 90vw;
+  height: 80vh;
+  background-color: darkslategrey;
+  display: flex;
+  position: relative;
+}
+.left-part {
+  height: 100%;
+  width: 93%;
+  background-color: black;
+
+  position: relative;
+  overflow: hidden;
+  &__img-wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+  }
+  &__img-container {
+    width: 100%;
+    height: 100%;
+  }
+  &__img {
+    width: 90vw;
+    height: 80vh;
+    object-fit: cover;
+    object-position: center top;
+  }
+  &__content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  &__header {
+    padding: 40px 40px 20px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__header-rigth {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    line-height: 23px;
+  }
+  &__container {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    padding: 20px 40px 20px 60px;
+  }
+  &__footer {
+    padding: 20px 40px 40px 60px;
+    color: #fff;
+    position: relative;
+  }
+}
+
+.right-part {
+  height: 100%;
+  background-color: wheat;
+  flex-grow: 1;
+  position: relative;
+  background-image: url("../img/adidas-yeezy-boost.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.icon-panel {
+  position: absolute;
+  bottom: 45px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  padding: 0 40px;
+}
+.open-button {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #173eee;
+  position: absolute;
+  bottom: 30px;
+  left: -30px;
+  &:focus {
+    outline: none;
+  }
+
+  span {
+    width: 2px;
+    height: 10px;
+    background-color: #fff;
+    position: absolute;
+    top: 25px;
+    &:nth-child(1) {
+      left: 26px;
+    }
+    &:nth-child(2) {
+      left: 30px;
+    }
+    &:nth-child(3) {
+      left: 34px;
+    }
+  }
+}
+.logo {
+  color: #fff;
+  font-size: 18px;
+}
+.share-link {
+  color: #fff;
+  font-size: 12px;
+  margin-right: 30px;
+  text-decoration: none;
+  margin-top: 1px;
+}
+.grid-view {
+  width: 8px;
+  height: 8px;
+  background-image: url("../img/grid.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  margin-top: 3px;
+}
+
+.title {
+  color: #fff;
+  font-size: 40px;
+  margin-bottom: 30px;
+  &__line {
+    overflow: hidden;
+  }
+}
+
+.link-to-store {
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  text-decoration: none;
+}
+.link-arr {
+  padding-left: 10px;
+}
+
+.user-pic {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+  margin: 0 5px;
+
+  img {
+    width: 25px;
+    height: 25px;
+    object-fit: cover;
+  }
+  &:hover {
+    border-color: #173eee;
+  }
+}
+.linked-by {
+  color: #888;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 10px;
+  margin-right: 10px;
+  position: relative;
+  padding-right: 40px;
+
+  &:after {
+    content: "";
+    width: 30px;
+    height: 1px;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 6px;
+    background-color: #aaa;
+  }
+}
+
+.like {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  background-image: url("../img/like.svg");
+  background-position: center;
+  background-size: 10px;
+  background-repeat: no-repeat;
+  margin-right: 10px;
+}
+.new-collection-link {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 300px;
+  bottom: 53px;
+  &__span {
+    font-weight: bold;
+    font-size: 10px;
+    opacity: 0.8;
+    margin-right: 10px;
+  }
+  &__link {
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+}
