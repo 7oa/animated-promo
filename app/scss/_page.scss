@@ -49,6 +49,8 @@ button {
 .container {
   width: 90vw;
   height: 80vh;
+  max-width: 1600px;
+  max-height: 800px;
   background-color: darkslategrey;
   display: flex;
   position: relative;
@@ -75,6 +77,8 @@ button {
   &__img {
     width: 90vw;
     height: 80vh;
+    max-width: 1600px;
+    max-height: 800px;
     object-fit: cover;
     object-position: center top;
   }
@@ -114,7 +118,7 @@ button {
 
 .right-part {
   height: 100%;
-  background-color: wheat;
+  background-color: #fff;
   flex-grow: 1;
   position: relative;
   background-image: url("img/adidas-yeezy-boost.jpg");
