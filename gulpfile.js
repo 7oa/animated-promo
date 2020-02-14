@@ -32,7 +32,7 @@ function log(error) {
   );
   this.end();
 }
-// Работа с pug
+
 gulp.task("pug", function() {
   gulp
     .src("app/templates/*.pug")
@@ -45,7 +45,7 @@ gulp.task("pug", function() {
 var autoprefixerOptions = {
   browsers: ["last 2 version"]
 };
-// Работа с Sass
+
 gulp.task("sass", function() {
   gulp
     .src("app/scss/style.scss")
@@ -61,7 +61,6 @@ gulp.task("sass", function() {
     .pipe(browserSync.stream());
 });
 
-// Работа с js
 gulp.task("js", function() {
   gulp
     .src("app/js/script.js")
@@ -76,10 +75,9 @@ gulp.task("js", function() {
     .pipe(browserSync.stream());
 });
 
-// Сборка IMG
 gulp.task("image", function() {
   gulp
-    .src("app/img/**/*.*") //Выберем наши картинки
+    .src("app/img/**/*.*")
     .pipe(
       cache(
         imagemin([
@@ -92,25 +90,19 @@ gulp.task("image", function() {
         ])
       )
     )
-    .pipe(gulp.dest(dest_path + "/img/")) //И бросим в public/images/
+    .pipe(gulp.dest(dest_path + "/img/"))
     .pipe(browserSync.stream());
 });
 
-// Такс запускает одной командой все предыдущие таски
 gulp.task("build", ["pug", "sass", "js", "image"]);
 
-// Если вы добавите какую-нибудь картинку, потом запустите задачу image и потом картинку удалите — она останется в папке public.
-// Так что было бы удобно — периодически подчищать ее. Создадим для этого простой таск
 gulp.task("clean", function(cb) {
   rimraf(dest_path, cb);
 });
 
-// Очистка кэша
 gulp.task("clearcache", function() {
   return cache.clearAll();
 });
-
-// Слежка
 
 gulp.task("watch", function() {
   watch(["./app/img/**/*.*"], function(event, cb) {
@@ -129,7 +121,6 @@ gulp.task("watch", function() {
   });
 });
 
-// Запуск сервера c лайврелоадом
 gulp.task("serv_livereload", function() {
   connect.server({
     root: dest_path,
@@ -139,28 +130,13 @@ gulp.task("serv_livereload", function() {
   opn("http://localhost:8888");
 });
 
-// Запуск сервера без лайврелоада
-gulp.task("serv_no_livereload", function() {
-  connect.server({
-    root: dest_path,
-    port: 8888
-  });
-  opn("http://localhost:8888");
-});
-
 browserSync.create();
-var reload = browserSync.reload;
-//  Запуск browserSync, и слежения за изменениями в файлах
 gulp.task("server", function() {
   browserSync.init({
-    server: dest_path, //Рабоччая директория
-    browser: "chrome", //Запуск браузера Google Chrome
-    notify: false //Не отображать уведомления browserSync в браузере
+    server: dest_path,
+    browser: "chrome",
+    notify: false
   });
 });
 
-// Задача по-умолчанию
 gulp.task("default", ["server", "watch"]);
-
-// Для ie
-gulp.task("serv", ["serv_no_livereload", "watch"]);
