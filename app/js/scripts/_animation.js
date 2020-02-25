@@ -4,9 +4,19 @@
   let tl0 = gsap.timeline({ paused: true });
   let tl = gsap.timeline({ paused: true });
 
-  // let tl = new TimelineMax({ paused: true });
-
+  let slider = new Slider(document.querySelector(".slider-wrapper"));
   tl0
+    .to(".slider__item .slider__part", 0.8, {
+      y: "100%",
+      stagger: {
+        grid: [3, 3],
+        from: "end",
+        each: 0.15,
+        axis: "x",
+        ease: Power3.easeInOut
+      },
+      onComplete: () => slider.changeSlide("next")
+    })
     .to(".animate-title", 1.2, {
       y: 0,
       ease: Power2.easeOut
