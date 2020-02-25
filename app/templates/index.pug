@@ -10,10 +10,17 @@ block content
 				img._left-img.animate-bg-img(src='img/HB_ADS1102.jpg' alt='')
 			._right
 		.container
-			.left-part.animate-slide
-				._img-wrapper
-					._img-container.animate-slide-img
+			.left-part.animate-slide.slider-wrapper
+				._img-wrapper.slider.animate-slide-img
+					._img-container.slider__item
+						img._img(src='img/HB_ADS0968.jpg' alt='')
+					._img-container.slider__item
 						img._img(src='img/Kanye-West-The-Meadows-Sept-2016-billboard-1548.jpg' alt='')
+					._img-container.slider__item
+						img._img(src='img/HB_ADS1040.jpg' alt='')
+				.slider-nav
+					button.slider-nav__button.prev
+					button.slider-nav__button.next
 				._content
 					._header
 						.logo // Logo

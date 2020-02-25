@@ -40,6 +40,7 @@
       1.5,
       {
         x: "-10%",
+        width: "112%",
         ease: Power2.easeInOut
       },
       "-=1.5"
